@@ -304,81 +304,125 @@ export default function ExplorePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary/90 to-primary py-16 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-6">Explore & Learn Ayurveda</h1>
-          <p className="text-white/90 max-w-3xl mx-auto mb-8">
-            Discover the rich diversity of Ayurvedic plants, their properties, and traditional uses. Search, filter, and
-            learn about plants that have been used for centuries in traditional medicine.
-          </p>
-          <div className="max-w-3xl mx-auto relative">
-            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
+      <section className="relative bg-[#256670] py-20 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-8 left-1/4 w-64 h-64 rounded-full bg-[#D9A566] blur-3xl"></div>
+          <div className="absolute bottom-12 right-1/4 w-80 h-80 rounded-full bg-[#D9A566] blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="md:w-1/2 text-left">
+              <div className="inline-block mb-3 px-4 py-1.5 bg-[#D9A566]/20 text-[#D9A566] font-medium rounded-full text-sm">
+                Discover Ayurvedic Wisdom
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+                Explore the World of <span className="text-[#D9A566]">Ayurvedic</span> Plants
+              </h1>
+              <p className="text-white/80 text-lg mb-8 max-w-xl">
+                Connect with centuries of traditional knowledge through our curated collection of medicinal plants, expert courses, and authentic remedies.
+              </p>
+              
+              <div className="relative max-w-lg">
+                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-[#256670]/60" />
+                </div>
+                <Input
+                  placeholder="Search plants, courses, or remedies..."
+                  className="pl-12 pr-32 py-6 text-[#256670] bg-white border-0 shadow-xl rounded-full focus:ring-[#D9A566] focus:ring-2 focus:border-transparent"
+                />
+                <div className="absolute inset-y-0 right-2 flex items-center">
+                  <Button size="sm" className="bg-[#D9A566] hover:bg-[#D9A566]/90 text-white rounded-full px-6 font-medium">
+                    Search
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="mt-6 flex items-center gap-4 text-sm text-white/70">
+                <span className="flex items-center">
+                  <Leaf className="h-4 w-4 mr-1 text-[#D9A566]" /> 120+ Plants
+                </span>
+                <span className="flex items-center">
+                  <BookOpen className="h-4 w-4 mr-1 text-[#D9A566]" /> 45+ Courses
+                </span>
+                <span className="flex items-center">
+                  <Pill className="h-4 w-4 mr-1 text-[#D9A566]" /> 80+ Remedies
+                </span>
+              </div>
             </div>
-            <Input
-              placeholder="Search plants, courses, or remedies..."
-              className="pl-12 py-6 text-gray-800 bg-white/95 border-0 shadow-lg rounded-full"
-            />
-            <div className="absolute inset-y-0 right-4 flex items-center">
-              <Button size="sm" className="rounded-full">
-                Search
-              </Button>
+            
+            <div className="md:w-1/2 relative">
+              <div className="aspect-square max-w-md mx-auto relative">
+                <div className="absolute inset-0 bg-[#D9A566] rounded-full opacity-20 blur-md"></div>
+                <div className="absolute inset-4 border-2 border-dashed border-[#D9A566]/30 rounded-full"></div>
+                <Image 
+                  src="/placeholder.svg?height=500&width=500" 
+                  alt="Ayurvedic Plants Collection"
+                  width={500} 
+                  height={500}
+                  className="relative z-10 rounded-full p-6"
+                />
+                <div className="absolute -top-4 -right-4 bg-[#D9A566] text-white p-4 rounded-full shadow-lg">
+                  <Sparkles className="h-6 w-6" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content Tabs */}
-      <section className="py-8">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="plants" className="w-full">
-            <div className="flex justify-center mb-8">
-              <TabsList className="bg-gray-100 p-1 rounded-full">
-                <TabsTrigger
-                  value="plants"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white px-6"
-                >
-                  <Leaf className="h-4 w-4 mr-2" /> Plants
-                </TabsTrigger>
-                <TabsTrigger
-                  value="learning"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white px-6"
-                >
-                  <BookOpen className="h-4 w-4 mr-2" /> Learning
-                </TabsTrigger>
-                <TabsTrigger
-                  value="3d-models"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white px-6"
-                >
-                  <Sparkles className="h-4 w-4 mr-2" /> 3D Models
-                </TabsTrigger>
-                <TabsTrigger
-                  value="remedies"
-                  className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-white px-6"
-                >
-                  <Pill className="h-4 w-4 mr-2" /> Remedies
-                </TabsTrigger>
-              </TabsList>
-            </div>
+        <div className="flex justify-center mb-10">
+          <TabsList className="bg-[#256670]/10 p-1.5 rounded-full shadow-md border border-[#256670]/10">
+            <TabsTrigger
+          value="plants"
+          className="rounded-full data-[state=active]:bg-[#256670] data-[state=active]:text-white px-6 py-2.5 transition-all font-medium"
+            >
+          <Leaf className="h-4 w-4 mr-2" /> Plants
+            </TabsTrigger>
+            <TabsTrigger
+          value="learning"
+          className="rounded-full data-[state=active]:bg-[#256670] data-[state=active]:text-white px-6 py-2.5 transition-all font-medium"
+            >
+          <BookOpen className="h-4 w-4 mr-2" /> Learning
+            </TabsTrigger>
+            <TabsTrigger
+          value="3d-models"
+          className="rounded-full data-[state=active]:bg-[#256670] data-[state=active]:text-white px-6 py-2.5 transition-all font-medium"
+            >
+          <Sparkles className="h-4 w-4 mr-2" /> 3D Models
+            </TabsTrigger>
+            <TabsTrigger
+          value="remedies"
+          className="rounded-full data-[state=active]:bg-[#256670] data-[state=active]:text-white px-6 py-2.5 transition-all font-medium"
+            >
+          <Pill className="h-4 w-4 mr-2" /> Remedies
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
-            {/* Plants Tab Content */}
-            <TabsContent value="plants" className="m-0">
-              {/* Filter Bar */}
-              <div className="bg-white shadow-sm rounded-lg p-4 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Filter className="h-4 w-4" />
-                    Filter
-                  </Button>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Camera className="h-4 w-4" />
-                    Image Search
-                  </Button>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <span>120 plants available</span>
-                  <span className="mx-2">•</span>
-                  <span>
+        {/* Plants Tab Content */}
+        <TabsContent value="plants" className="m-0">
+          {/* Filter Bar */}
+          <div className="bg-white shadow-lg rounded-xl p-4 mb-10 flex flex-col md:flex-row gap-4 items-center justify-between border border-[#256670]/10">
+            <div className="flex items-center gap-2">
+          <Button variant="outline" className="flex items-center gap-2 border-[#256670]/30 hover:bg-[#256670]/5 hover:border-[#256670]/50 text-[#256670]">
+            <Filter className="h-4 w-4" />
+            Filter
+          </Button>
+          <Button variant="outline" className="flex items-center gap-2 border-[#256670]/30 hover:bg-[#256670]/5 hover:border-[#256670]/50 text-[#256670]">
+            <Camera className="h-4 w-4" />
+            Image Search
+          </Button>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span>120 plants available</span>
+          <span className="mx-2 text-[#D9A566]">•</span>
+          <span>
                     Sort by: <span className="font-medium text-gray-900">Popularity</span>
                   </span>
                 </div>
@@ -737,7 +781,7 @@ export default function ExplorePage() {
               </section>
 
               {/* Learning Community */}
-              <section className="bg-primary/5 rounded-2xl p-8 mb-16">
+              <section className="bg-</Card>primary/5 rounded-2xl p-8 mb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
                     <h2 className="text-3xl font-bold mb-6">Join Our Learning Community</h2>

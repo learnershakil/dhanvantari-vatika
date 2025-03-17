@@ -37,7 +37,14 @@ export default function VirtualGardenPage() {
 
       {/* Virtual Garden iframe */}
       <div className="w-full h-[80vh] relative bg-gray-100">
-        <iframe src="about:blank" className="w-full h-full border-0" title="Dhanvantari Vatika Virtual Garden" />
+        
+        <iframe 
+          src="https://app.gather.town/app/gRQWeFGdALj6Xq6E/Dhanvantri?embed=true" 
+          className="w-full h-full border-0" 
+          title="Dhanvantari Vatika Virtual Garden"
+          allow="camera; microphone; fullscreen; display-capture; autoplay" 
+          referrerPolicy="no-referrer"
+        />
 
         {/* Plant Information Overlay (Example) */}
         <div className="absolute bottom-6 left-6 bg-white/95 p-4 rounded-lg shadow-lg max-w-sm border border-primary/20">
